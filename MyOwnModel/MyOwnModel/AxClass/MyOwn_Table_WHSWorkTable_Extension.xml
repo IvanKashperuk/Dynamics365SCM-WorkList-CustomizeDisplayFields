@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>MyOwn_Table_WHSWorkTable_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(tableStr(WHSWorkTable))]
+public final class MyOwn_Table_WHSWorkTable_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>requiresForklift</Name>
+				<Source><![CDATA[
+    public display MyOwnRequiresForklift requiresForklift()
+    {
+        WHSWorkLine workLine;
+
+        select firstonly RecId from workLine
+            where workLine.WorkId == this.WorkId
+                && workLine.WorkClassId == "SO Pick";
+
+        return workLine.RecId != 0 ? enum2Str(NoYes::Yes) : enum2Str(NoYes::No);
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

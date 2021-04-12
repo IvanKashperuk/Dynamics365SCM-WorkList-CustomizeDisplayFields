@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>MyOwn_Table_WHSTmpFieldName_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(tableStr(WHSTmpFieldName))]
+public final class MyOwn_Table_WHSTmpFieldName_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>populateWorkDisplayMethods</Name>
+				<Source><![CDATA[
+    public void populateWorkDisplayMethods()
+    {
+        ttsbegin;
+
+        next populateWorkDisplayMethods();
+
+        this.SysTableId = 0;
+        this.SysFieldID = 0;
+        this.FieldName  = identifierStr(requiresForklift);
+        this.insert();
+
+        ttscommit;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

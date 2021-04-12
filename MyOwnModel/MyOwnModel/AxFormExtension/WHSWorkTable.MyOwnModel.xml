@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxFormExtension xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>WHSWorkTable.MyOwnModel</Name>
+	<ControlModifications />
+	<Controls>
+		<AxFormExtensionControl xmlns="">
+			<Name>FormExtensionControlgn14r4hu1</Name>
+			<FormControl xmlns=""
+				i:type="AxFormStringControl">
+				<Name>WHSWorkTable_MyOwnField</Name>
+				<Type>String</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<DataField>MyOwnField</DataField>
+				<DataSource>WHSWorkTable</DataSource>
+			</FormControl>
+			<Parent>WorkInfo</Parent>
+		</AxFormExtensionControl>
+	</Controls>
+	<DataSourceModifications />
+	<DataSourceReferences />
+	<DataSources />
+	<Parts />
+	<PropertyModifications />
+</AxFormExtension>
